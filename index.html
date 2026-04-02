@@ -219,7 +219,7 @@ body {
 
   opacity: 0;
   animation: fadeInDate 1s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 
 @keyframes fadeInDate {
@@ -474,7 +474,7 @@ body {
 
 .photo-name {
   font-family:'Great Vibes',cursive;
-  font-size:clamp(1.6rem,4vw,2.6rem);
+  font-size:clamp(1.8rem,5vw,3rem);
   color:var(--gold-lt); margin-top:18px;
 }
 .photo-role {
@@ -628,8 +628,21 @@ body {
 
 .fam-tag { font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:13px; }
 .fam-name { font-family:'Great Vibes',cursive; font-size:clamp(2rem,5vw,3rem); color:var(--crimson-dk); margin-bottom:10px; }
-.fam-parents { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.5rem; color:var(--text-mid); line-height:1.85; }
-.fam-parents strong { font-family:'Cinzel',serif; font-style:normal; font-size:0.8rem; color:var(--crimson); letter-spacing:0.05em; }
+.fam-parents {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.9rem;     /* increased */
+  color: var(--text-mid);
+  line-height: 2;
+}
+
+.fam-parents strong {
+  font-family: 'Cinzel', serif;
+  font-style: normal;
+  font-size: 1.3rem;     /* increased from 0.8rem */
+  color: var(--crimson);
+  letter-spacing: 0.08em;
+}
 .fam-amp { font-family:'Great Vibes',cursive; font-size:clamp(3rem,7vw,5rem); color:var(--gold); opacity:0.4; }
 @media(max-width:640px){ .fam-grid{grid-template-columns:1fr} .fam-amp{font-size:2.5rem} }
 
@@ -1443,9 +1456,7 @@ footer::before {
             </g>
           </svg>
           <div class="fam-tag">Groom's Family</div>
-          <div class="fam-name">Vikram Raj</div>
-          <div class="orn-line"><span>&#10022;</span></div>
-          <div class="fam-parents">Son of<br><strong>Mr. Ajay Kumar</strong><br>&amp;<br><strong>Mrs. Anandhi</strong></div>
+          <div class="fam-parents"><strong>Mr. Ajay Kumar</strong><br>&amp;<br><strong>Mrs. Anandhi</strong></div>
         </div>
         <div class="fam-amp reveal d2">&amp;</div>
         <div class="fam-card reveal d3">
@@ -1459,9 +1470,7 @@ footer::before {
             </g>
           </svg>
           <div class="fam-tag">Bride's Family</div>
-          <div class="fam-name">Gayathri</div>
-          <div class="orn-line"><span>&#10022;</span></div>
-          <div class="fam-parents">Daughter of<br><strong>Mr. Munipathiran</strong><br>&amp;<br><strong>Mrs. Revathi</strong></div>
+          <div class="fam-parents"><strong>Mr. Munipathiran</strong><br>&amp;<br><strong>Mrs. Revathi</strong></div>
         </div>
       </div>
     </div>
