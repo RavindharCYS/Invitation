@@ -1084,6 +1084,9 @@ footer::before {
 </style>
 </head>
 <body>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <canvas id="petals"></canvas>
 
@@ -1400,7 +1403,7 @@ footer::before {
       <div class="photo-wrap">
         <div class="photo-frame">
           <span class="c1"></span><span class="c2"></span>
-          <img src="groom.jpg" alt="Vikram Raj - Groom" onerror="this.src='https://placehold.co/300x400/3a0814/f2c96a?text=Groom'">
+          <img src="groom.jpeg" alt="Vikram Raj - Groom" onerror="this.src='https://placehold.co/300x400/3a0814/f2c96a?text=Groom'">
         </div>
         <div class="photo-name">Vikram Raj</div>
         <div class="photo-role">The Groom</div>
@@ -1417,7 +1420,7 @@ footer::before {
       <div class="photo-wrap">
         <div class="photo-frame">
           <span class="c1"></span><span class="c2"></span>
-          <img src="bride.jpg" alt="Gayathri - Bride" onerror="this.src='https://placehold.co/300x400/3a0814/f2c96a?text=Bride'">
+          <img src="bride.jpeg" alt="Gayathri - Bride" onerror="this.src='https://placehold.co/300x400/3a0814/f2c96a?text=Bride'">
         </div>
         <div class="photo-name">Gayathri</div>
         <div class="photo-role">The Bride</div>
@@ -1875,15 +1878,32 @@ window.addEventListener('scroll',function(){
 });
 
 /* === MUSIC TOGGLE === */
-var musicPlaying=false;
-function toggleMusic(){
-  var btn=document.getElementById('musicToggle');
-  if(!musicPlaying){
+
+var musicPlaying = false;
+var bgMusic = document.getElementById('bgMusic');
+
+bgMusic.volume = 0.5;
+
+// Auto play after first interaction
+document.addEventListener('click', function () {
+  if (!musicPlaying) {
+    bgMusic.play();
+    document.getElementById('musicToggle').classList.add('playing');
+    musicPlaying = true;
+  }
+}, { once: true });
+
+function toggleMusic() {
+  var btn = document.getElementById('musicToggle');
+
+  if (!musicPlaying) {
+    bgMusic.play();
     btn.classList.add('playing');
-    musicPlaying=true;
+    musicPlaying = true;
   } else {
+    bgMusic.pause();
     btn.classList.remove('playing');
-    musicPlaying=false;
+    musicPlaying = false;
   }
 }
 
